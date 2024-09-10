@@ -10,5 +10,5 @@ import testorder.infra.AbstractEvent;
 public class OrderPlaced extends AbstractEvent {
 
     private Long id;
-    private Object foodId;
+    private List<Long> foodId;
 }

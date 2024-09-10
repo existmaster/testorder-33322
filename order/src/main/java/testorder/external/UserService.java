@@ -13,7 +13,7 @@ import java.util.List;
  
 public interface UserService {
     @GetMapping(path="/users/search/findByGetUser/{id}")
-    public User getUser(@PathVariableGetUserQuery getUserQuery);
+    public User getUser(@PathVariable GetUserQuery getUserQuery);
 
 }
 

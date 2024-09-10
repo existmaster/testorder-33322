@@ -25,8 +25,8 @@ public class Food {
 
     @PostPersist
     public void onPostPersist() {
-        FoodMaked foodMaked = new FoodMaked(this);
-        foodMaked.publishAfterCommit();
+        
+        
     }
 
     public static FoodRepository repository() {
@@ -45,18 +45,14 @@ public class Food {
         repository().save(food);
 
         */
-
-        /** Example 2:  finding and process
         
-        repository().findById(orderPlaced.get???()).ifPresent(food->{
-            
-            food // do something
-            repository().save(food);
-
-
-         });
-        */
-
+        repository().findAllById(orderPlaced.getFoodId()).forEach(food-> {
+            FoodMaked foodMaked = new FoodMaked();
+            foodMaked.setId(food.getId());
+            foodMaked.setMaterialId(food.materialId);
+            foodMaked.setName(food.getName());
+            foodMaked.publishAfterCommit();   
+        }); 
     }
     //>>> Clean Arch / Port Method
 

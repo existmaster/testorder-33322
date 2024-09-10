@@ -23,7 +23,7 @@ public class OrderController {
     @RequestMapping(value = "/orders/order",
             method = RequestMethod.POST,
             produces = "application/json;charset=UTF-8")
-    public Order order(HttpServletRequest request, HttpServletResponse response, 
+    public Order order(HttpServletRequest request, HttpServletResponse response
         ) throws Exception {
             System.out.println("##### /order/order  called #####");
             Order order = new Order();
